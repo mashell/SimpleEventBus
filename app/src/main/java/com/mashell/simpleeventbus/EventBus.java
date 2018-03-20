@@ -58,7 +58,7 @@ public class EventBus {
             //当发现有 Subscribe 的注解
             if (m.isAnnotationPresent(Subscribe.class)) {
                 Subscribe s = m.getAnnotation(Subscribe.class);
-                //拿到参数列表,这里简易处理一个参数的情况
+                //拿到参数列表,也就是对应的事件.这里简易处理一个事件的情况
                 Class<?> c = m.getParameterTypes()[0];
                 //通过参数，从 Map 中取出订阅方法集合
                 List<Subscription> list = map.get(c);
